@@ -1,0 +1,460 @@
+@font-face {
+  font-family: 'BTABSSOM';
+  src: URL('BTABSSOM.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'PWSchoolScript';
+  src: URL('PWSchoolScript.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'BHOMA';
+  src: URL('BHOMA.TTF') format('truetype');
+}
+
+html, body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+    height: 100%;
+    overflow: hidden;
+	background-color: #022687;
+	overflow-x:hidden;
+	overflow-y:hidden;
+}
+
+header{
+	height: 3em;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+
+header div{
+	height: 100%;
+	display: ruby-text;
+	margin-top: -1.5em;
+}
+
+a {text-decoration: none;}
+
+#info{
+	width: 3em;
+	background-image: url("../images/info.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	float: left;
+}
+
+#textInfo{
+	color: white;
+	font-family: arial;
+	width: 25%;
+	float: left;
+	line-height: 3em;
+	font-size: 1.3em;
+}
+
+#pdate1{
+	margin-top: -1.5em;
+	font-family: BHOMA;
+	font-size: 1.3em;
+	line-height: 3em;
+	float: right;
+	margin-right: 1em;
+	color: white;
+	direction: rtl;
+}
+
+#timec{
+	margin-top: -.1em;
+	font-family: BHOMA;
+	font-size: 1.3em;
+	line-height: 3em;
+	float: right;
+	margin-right: -5.5em;
+	color: white;
+	direction: rtl;
+}
+
+/*ENF OF HEADER********************************/
+
+#games{
+	width: 85em;
+	position: absolute;
+	top: .5em;
+	left: 0;
+	padding: 5em;
+	z-index: 2;
+}
+
+#games2{
+	width: 85em;
+	position: absolute;
+	top: .5em;
+	left: 0;
+	padding: 5em;
+	z-index: 1;
+}
+
+#games3{
+	width: 85em;
+	position: absolute;
+	top: .5em;
+	left: 0;
+	padding: 5em;
+	z-index: -1;
+}
+
+.squareGame{
+	margin-top: 2em;
+	height: 5.8em;
+	width: 5.8em;
+	margin-left: 0.3em;
+	vertical-align: top;
+	display: inline-block;
+	transition: 0.3s ease;
+}
+
+.squareGame2{
+	margin-top: 13em;
+	height: 5.8em;
+	width: 5.8em;
+	margin-left: 0.3em;
+	vertical-align: top;
+	display: inline-block;
+	transition: 0.3s ease;
+}
+
+.squareGame3{
+	margin-top: 24em;
+	height: 5.8em;
+	width: 5.8em;
+	margin-left: 0.3em;
+	vertical-align: top;
+	display: inline-block;
+	transition: 0.3s ease;
+}
+
+.squareGame:hover{
+	height: 8em;
+	width: 8em;
+	border: 3px solid white;
+	cursor: pointer;
+}
+
+.squareGame2:hover{
+	height: 8em;
+	width: 8em;
+	border: 3px solid white;
+	cursor: pointer;
+}
+
+.squareGame3:hover{
+	height: 8em;
+	width: 8em;
+	border: 3px solid white;
+	cursor: pointer;
+}
+
+.squareGame:hover .imgGame{
+	height: 68%;
+}
+
+.squareGame2:hover .imgGame2{
+	height: 68%;
+}
+
+.squareGame3:hover .imgGame3{
+	height: 68%;
+}
+
+.imgGame{
+	height: 100%;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.imgGame2{
+	height: 100%;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.imgGame3{
+	height: 100%;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.gameText{
+	color: white;
+	font-family: PWSchoolScript;
+	text-align: center;
+	font-size: 1.3em;
+	line-height: 2em;
+	background-color: rgba(255,255,255,.2);
+}
+
+.gameText2{
+	color: white;
+	font-family: PWSchoolScript;
+	text-align: center;
+	font-size: 1.3em;
+	line-height: 2em;
+	background-color: rgba(255,255,255,.2);
+}
+
+.gameText3{
+	color: white;
+	font-family: PWSchoolScript;
+	text-align: center;
+	font-size: 1.3em;
+	line-height: 2em;
+	background-color: rgba(255,255,255,.2);
+}
+
+mark {padding-left: 10px; padding-right: 10px; color:white; background-color: rgba(255, 255, 255, .05);}
+
+.gameTitle{
+	position: absolute;
+	color: white;
+	font-size: 1.3em;
+	margin-top: 0.2em;
+	font-family: BTABSSOM;
+	transform: translate(0em,0em);
+	direction:rtl;
+}
+
+.gameTitle2{
+	position: absolute;
+	color: white;
+	font-size: 1.3em;
+	margin-top: 0.2em;
+	font-family: BTABSSOM;
+	transform: translate(0em,0em);
+	direction:rtl;
+}
+
+.gameTitle3{
+	position: absolute;
+	color: white;
+	font-size: 1.3em;
+	margin-top: 0.2em;
+	font-family: BTABSSOM;
+	transform: translate(0em,0em);
+	direction:rtl;
+}
+/*SQUARE IMAGE*****************************************/
+
+.ascii{
+	font-weight: bold;
+}
+
+.hen15{
+	background-image: url("../images/hen15.png");
+}
+
+.hen16{
+	background-image: url("../images/hen16.png");
+}
+
+.hen17{
+	background-image: url("../images/hen17.png");
+}
+
+.hen17l{
+	background-image: url("../images/hen17l.png");
+}
+
+.hen18{
+	background-image: url("../images/hen18.png");
+}
+
+.hen213{
+	background-image: url("../images/hen213.png");
+}
+
+.hen212{
+	background-image: url("../images/hen212.png");
+}
+
+.henmira{
+	background-image: url("../images/hen18.png");
+}
+
+.hen18vr{
+	background-image: url("../images/hen18vr.png");
+}
+
+.binloader{
+	background-image: url("../images/binloader.png");
+}
+
+.mira{
+	background-image: url("../images/mira.png");
+}
+
+.ftp{
+	background-image: url("../images/ftp.png");
+}
+
+.dumper{
+	background-image: url("../images/dumper.png");
+}
+
+.vr{
+	background-image: url("../images/vr.png");
+}
+
+.webrte{
+	background-image: url("../images/webrte.png");
+}
+
+.fan{
+	background-image: url("../images/fan.png");
+}
+
+.apptousb{
+	background-image: url("../images/apptousb.png");
+}
+
+.Linux{
+	background-image: url("../images/linux.png");
+}
+
+.Linux2{
+	background-image: url("../images/linux2.png");
+}
+
+.ftprw{
+	background-image: url("../images/ftprw.png");
+}
+
+.henscreenshot{
+	background-image: url("../images/henscreenshot.png");
+}
+
+.pkg{
+	background-image: url("../images/pkg.png");
+}
+
+.remoteplay{
+	background-image: url("../images/remoteplay.png");
+}
+
+.rif{
+	background-image: url("../images/rif.png");
+}
+
+.blocker{
+	background-image: url("../images/blocker.png");
+}
+
+.unblocker{
+	background-image: url("../images/unblocker.png");
+}
+
+.gta{
+	background-image: url("../images/gta.png");
+}
+
+.db_backup{
+	background-image: url("../images/db_backup.png");
+}
+
+.db_restore{
+	background-image: url("../images/db_restore.png");
+}
+
+.save_backup{
+	background-image: url("../images/save_backup.png");
+}
+
+.save_mounter{
+	background-image: url("../images/save_mounter.png");
+}
+
+.save_restore{
+	background-image: url("../images/save_restore.png");
+}
+
+.trp_backup{
+	background-image: url("../images/trp_backup.png");
+}
+
+.trp_restore{
+	background-image: url("../images/trp_restore.png");
+}
+
+.cache{
+	background-image: url("../images/cache.png");
+}
+
+.about{
+	background-image: url("../images/about.png");
+}
+
+.debug{
+	background-image: url("../images/debug.png");
+}
+
+/*waves****************************/
+
+.box {
+	position: fixed;
+	top: -5em;
+	transform: rotate(60deg);
+	left: 0;
+}
+
+.wave {
+	position: fixed;
+	top: 0;
+	left: 0;
+  opacity: .4;
+  position: absolute;
+  top: 3%;
+  left: 10%;
+  background: #073692;
+  width: 1500px;
+  height: 1300px;
+    margin-left: -150px;
+    margin-top: -250px;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 15000ms infinite linear;
+}
+
+.wave.-two {
+  animation: drift 10000ms infinite linear;
+  opacity: .1;
+  background: #0543b4;
+	position: fixed;
+}
+.wave.-three {
+  animation: drift 14500ms infinite linear;
+	position: fixed;
+	background-color: #073692;
+}
+
+.box:after {
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}
