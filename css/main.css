@@ -3,14 +3,14 @@
 }
 .tile {
  display:inline-table;
- width:11%;
+ width:9.5%;
  height:95px;
  margin:5px;
  background:rgba(0,0,0,0.5);
  transition:0.3s;
  overflow:hidden;
  border-radius:15px;
- margin-left:10px;
+ margin-left:0px;
 }
 .nav-wrapper {
  background:rgba(0,0,0,0.5);
@@ -101,12 +101,14 @@ nav {
 }
 .detail {
  margin-top:8%;
- width:95%;
+ width:auto;
+ direction:rtl;
+ text-align:right;
+ float:right;
  min-height:30px;
  background:rgba(0,0,0,0.9);
  border-radius:5px;
  color:white;
- margin-left:2.5%;
  padding:11px;
  direction:rtl;
  border-bottom:3px #d4af37 solid;
