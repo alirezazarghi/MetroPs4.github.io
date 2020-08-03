@@ -1,0 +1,126 @@
+.mainSection{
+ margin-top:20px;
+}
+.tile {
+ display:inline-table;
+ width:11%;
+ height:95px;
+ margin:5px;
+ background:rgba(0,0,0,0.5);
+ transition:0.3s;
+ overflow:hidden;
+ border-radius:15px;
+ margin-left:10px;
+}
+.nav-wrapper {
+ background:rgba(0,0,0,0.5);
+}
+#nav-mobile li{
+ text-shadow: 0px 0px 2px white;
+}
+.tile p{
+ line-height:1px;
+ margin-top:0%;
+ text-align:center;
+ font-size:15px;
+ font-weight:400;
+}
+.tile img{
+ width:60%;
+ margin-left:20%;
+}
+.tile:hover {
+ animation:shake 0.35s;
+ background:rgba(0,0,0,0.75);
+}
+.tile:hover p{
+  text-shadow: 0px 0px 2px white;
+}
+nav {
+ margin-bottom:0px;
+}
+.brand-logo{
+ margin-left:10px;
+ font-weight:bold;
+ text-shadow: 0px 0px 2px white;
+}
+#nav-mobile {
+ margin-right:10px;
+}
+#nav-mobile li a{
+ font-size:20px;
+}
+.card {
+ width:12%;
+ margin:6.5px;
+ background:rgba(0,0,0,0.5);
+ display:inline-block;
+ margin-left:15px;
+}
+.card-action div{
+ font-size:15px;
+ line-height:20px;
+}
+.aboutUs {
+ background:rgba(0,0,0,0.7);
+ margin:50px;
+ color:white;
+ padding:5px;
+ text-align:center;
+ border-radius:10px;
+}
+.aboutUs p{
+ font-size:20px;
+}
+.loader {
+ font-size:18px;
+ width:100%;
+ background:rgba(0,0,0,0.5);
+ color:white;
+ padding:5px;
+ text-align:center;
+ transition:0.4s;
+ border-bottom-left-radius:100px;
+ border-bottom-right-radius:100px;
+}
+#msgs div{
+ display:inline;
+}
+#msgs {
+ font-weight:bold;
+}
+#clock{
+ float:right;
+ margin-right:1.25%;
+ font-weight:bold;
+}
+#date {
+ float:left;
+ margin-left:1.25%;
+ font-weight:bold;
+}
+.detail {
+ margin-top:8%;
+ width:95%;
+ min-height:30px;
+ background:rgba(0,0,0,0.9);
+ border-radius:5px;
+ color:white;
+ margin-left:2.5%;
+ padding:11px;
+ direction:rtl;
+ border-bottom:3px #d4af37 solid;
+ border-top:3px solid #d4af37;
+}
+.detail span{
+ font-weight:900;
+ font-size:20px;
+}
+
+
+@keyframes shake {
+  0%   {transform: translateX(0px)}
+  25%  {transform: translateX(10px)}
+  50%  {transform: translateX(-10px)}
+  100% {transform: translateX(0px)}
+}
