@@ -127,6 +127,7 @@ window.applicationCache.onupdateready=function(e){
      {name:"RemotePlay",icon:"remote.png",detail:"Tozihat Payload"},
      {name:"ToDex",icon:"todex.png",detail:"Tozihat Payload"},
      {name:"Webrte",icon:"rte.png",detail:"Tozihat Payload"},
+     {name:"FakeUSB",icon:"fakeusb.png",detail:"Tozihat Payload"},
     ],
     themes:[
      {url:"img0.jpg",selected:false},
@@ -249,6 +250,12 @@ window.applicationCache.onupdateready=function(e){
       msgs.innerHTML="<div>Loading Webrte ...</div>";
       LoadedMSG="Webrte Loaded ✔";
       var script = document.createElement('script');script.src = "p/pl_webrte.js";document.getElementsByTagName('head')[0].appendChild(script);
+      var script = document.createElement('script');script.src = "p/exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+     }
+     if(key==17){//load fakeusb
+      msgs.innerHTML="<div>Loading FakeUSB ...</div>";
+      LoadedMSG="FakeUSB Loaded ✔";
+      var script = document.createElement('script');script.src = "p/pl_fakeusb.js";document.getElementsByTagName('head')[0].appendChild(script);
       var script = document.createElement('script');script.src = "p/exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
      }
     },
