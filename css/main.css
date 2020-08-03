@@ -4,6 +4,8 @@
 .payloads{
  margin-left:15px;
  margin-right:9px;
+ padding-left:9px;
+ padding-right:9px;
 }
 .tile {
  display:inline-table;
