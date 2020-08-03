@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html manifest="offlinexmb.cache">
+<html>
+<head>
+ <title>BLACK BOX v1.0</title>
+ <meta charset="UTF-8" />
+ <link rel="stylesheet" href="css/icon.css">
+ <link rel="stylesheet" href="css/materialize.css">
+ <link rel="stylesheet" href="css/main.css">
+<script>
+function DLProgress(e){
+ Percent=(Math.round(e.loaded / e.total * 100));
+ window.msgs.innerHTML="Installing Offline Cache: " + Percent + "%";
+}
+function DisplayCacheProgress(){
+ setTimeout(function(){
+  window.msgs.innerHTML="Cache Installed Successfully";
+ },1500);
+ setTimeout(function(){
+  window.msgs.innerHTML="پیلود مورد نظر را انتخاب کنید";
+ },3000);
+}
+window.applicationCache.addEventListener("progress",DLProgress,false);
+window.applicationCache.oncached=function(e){
+ DisplayCacheProgress();
+};
+window.applicationCache.onupdateready=function(e){
+ DisplayCacheProgress();
+};
+</script>
+ <script src="p/exp_common.js"></script>
+ <script src="p/exp_jailbreak.js"></script>
+</head>
+<body id="body"  >
+
+ <div id="app" ><!-- app start -->
+ 
+ <nav class="transparent" ><!-- navbar start -->
+  <div class="nav-wrapper">
+   <a href="#" class="brand-logo left">BLACK BOX v1.0</a>
+   <ul id="nav-mobile" class="right"><!-- navbar links -->
+    <li class="waves-effect waves-light" v-if="!isPayloadShow" @click="showMain"><a>بازگشت به صفحه اصلی</a></li>
+    <li class="waves-effect waves-light" v-if="!isThemesShow" @click="showTheme"><a>تم ها</a></li>
+    <li class="waves-effect waves-light" v-if="!isAboutUsShow" @click="showAboutUs"><a>درباره ما</a></li>
+   </ul>
+  </div>
+ </nav><!-- navbar end -->
+  
+  <div class="loader" v-if="isLoaderShow">
+   <span id="date" ></span>
+   <span id="msgs">پیلود مورد نظر را انتخاب کنید</span>
+   <span id="clock" ></span>
+  </div>
+  
+  <div class="payloads" v-show="isPayloadShow"><!-- payloads list start -->
+   <div v-for="payload,key in payloads" @click="loadPlayload(key)" @mouseover="hover(key)" @mouseleave="hover()" class="tile">
+    <img :src="'img/'+payload.icon" >
+    <p class="white-text" >{{payload.name}}</p>
+   </div>   
+  </div><!-- payloads list end -->
+   
+  <div class="detail" v-show="isDetailShow" ><!-- tozihat-->
+   <span id="detail" ></span>
+  </div>
+  
+  <div class="theme" v-show="isThemesShow"><!-- themes start -->
+    
+    <div class="card" v-for="theme,key in themes" @click="changeTheme(key)">
+     <div class="card-image">
+      <img :src="'img/'+theme.url">
+     </div>
+     <div class="card-action waves-effect waves-light" style="width:100%" >
+      <div class="center" :class="{ 'green-text': theme.selected, 'white-text': !theme.selected}">{{theme.selected ? 'انتخاب شده' : 'انتخاب'}}</div>
+     </div>
+    </div>
+
+  </div><!-- themes end -->
+
+  
+   <div class="aboutUs"  v-show="isAboutUsShow"><!-- about us start -->
+    <h4><b>About Us</b></h4>
+    <p>Black Box v1.0 - Private Version For 6.72 FW</p>
+    <p>We Don't Have Any Public Telegram Group Or Channel !!</p>
+    <p>✔Super Special Thanks To : Karo Sharifi - Alazif - Leeful</p>
+    <p>✔Main Owner : SALT - Find Us In Telegram 📞 @Salt753194 📞 </p>
+    <p>✔Senior Designer : Amirhossein Kianfard</p>
+    <p>Last Update At August 2020</p>
+   </div><!-- about us end -->
+   
+   
+  </div><!-- app end -->
+  
+  
+  <!-- js section  -->
+ <script src="js/materialize.js"></script>
+ <script type="text/javascript">
+ if(localStorage.getItem("theme")==null){
+  localStorage.setItem("theme","0")
+ }
+ </script>
+ <script src="js/vue.js"></script>
+ <script type="text/javascript">
+  var app = new Vue({
+   el: '#app',
+   data: {
+    isLoaderShow:true,
+    isPayloadShow:true,
+    isThemesShow:false,
+    isAboutUsShow:false,
+    isDetailShow:false,
+    selectedTheme:localStorage.getItem("theme"),
+    payloads:[
+     {name:"Load Exploit",icon:"hen.png",detail:""},
+     {name:"Load Mira",icon:"hen.png",detail:"Tozihat Payload"},
+     {name:"E+M+RPlay",icon:"hen.png",detail:"Tozihat Payload"},
+     {name:"Bin Loader",icon:"binloader.png",detail:"Tozihat Payload"},
+     {name:"FTP",icon:"ftp.png",detail:"Tozihat Payload"},
+     {name:"Dumper",icon:"dumper.png",detail:"توضیحات پیلود دامپر"},
+     {name:"Linux Loader",icon:"linux.png",detail:"Tozihat Payload"},
+     {name:"App To USB",icon:"app2usb.png",detail:"Tozihat Payload"},
+     {name:"Kernel Dumper",icon:"kdumper.png",detail:"Tozihat Payload"},
+     {name:"History Blocker",icon:"history.png",detail:"Tozihat Payload"},
+     {name:"Disable Update",icon:"disableupdate.png",detail:"Tozihat Payload"},
+     {name:"Enable Update",icon:"enableupdate.png",detail:"Tozihat Payload"},
+     {name:"DB Backup",icon:"backup.png",detail:"Tozihat Payload"},
+     {name:"DB Restore",icon:"restore.png",detail:"Tozihat Payload"},
+     {name:"RemotePlay",icon:"remote.png",detail:"Tozihat Payload"},
+     {name:"ToDex",icon:"todex.png",detail:"Tozihat Payload"},
+     {name:"Webrte",icon:"rte.png",detail:"Tozihat Payload"},
+    ],
+    themes:[
+     {url:"img0.jpg",selected:false},
+     {url:"img1.jpg",selected:false},
+     {url:"img2.jpg",selected:false},
+     {url:"img3.jpg",selected:false},
+     {url:"img4.jpg",selected:false},
+     {url:"img5.jpg",selected:false},
+     {url:"img6.jpg",selected:false},
+     {url:"img7.jpg",selected:false},
+     {url:"img8.jpg",selected:false},
+     {url:"img9.jpg",selected:false},
+     {url:"img10.jpg",selected:false},
+     {url:"img11.jpg",selected:false},
+     {url:"img12.jpg",selected:false},
+     {url:"img13.jpg",selected:false},
+     {url:"img14.jpg",selected:false},
+     {url:"img15.jpg",selected:false},
+     {url:"img16.jpg",selected:false},
+     {url:"img17.jpg",selected:false},
+    ],
+   },
+   methods:{
+    loadPlayload: function(key){
+     if(key==0){//load exploit
+      msgs.innerHTML="<div>Loading Exploit ...</div>";
+      setTimeout(jailbreak,500);
+     }
+     if(key==1){//load mira
+      msgs.innerHTML="<div>Loading Mira ...</div>";
+      LoadedMSG="Mira Loaded ✔";
+      var script = document.createElement('script');script.src = "p/pl_mira.js";document.getElementsByTagName('head')[0].appendChild(script);
+      var script = document.createElement('script');script.src = "p/exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+     }
+     if(key==2){//load Exploit+Mira+RemotePlay
+      msgs.innerHTML="<div>Loading Exploit+Mira+RemotePlay ...</div>";
+      LoadedMSG="Exploit + Mira + REMOTPLAY Loaded ✔";ExploitMiraRemotePlay="yes";
+      setTimeout(jailbreak,500);
+      var script = document.createElement('script');script.src = "p/pl_remoteplay.js";document.getElementsByTagName('head')[0].appendChild(script);
+      var script = document.createElement('script');script.src = "p/exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+     }
+     if(key==3){//load binloader
+      msgs.innerHTML="<div>Loading Bin Loader ...</div>";
+      LoadedMSG="Done.Send Payload To Port 9021";
+      var script = document.createElement('script');script.src = "p/exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+     }
+     if(key==4){//load ftp
+      msgs.innerHTML="<div>Loading FTP ...</div>";
+      LoadedMSG="FTP Loaded ✔";
+      var script = document.createElement('script');script.src = "p/pl_ftp.js";document.getElementsByTagName('head')[0].appendChild(script);
+      var script = document.createElement('script');script.src = "p/exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+     }
+     if(key==5){//load dumper
+      msgs.innerHTML="<div>Loading Dumper ...</div>";
+      LoadedMSG="Dumper Loaded ✔";
+      var script = document.createElement('script');script.src = "p/pl_dumper.js";document.getElementsByTagName('head')[0].appendChild(script);
+      var script = document.createElement('script');script.src = "p/exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+     }
+     if(key==6){//load linux
+      msgs.innerHTML="<div>Loading Linux ...</div>";
+      LoadedMSG="Linux Loaded ✔";
+      var script = document.createElement('script');script.src = "p/pl_linux.js";document.getElementsByTagName('head')[0].appendChild(script);
+      var script = document.createElement('script');script.src = "p/exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+     }
+     if(key==7){//load app2usb
+      msgs.innerHTML="<div>Loading AppToUSB ...</div>";
+      LoadedMSG="AppToUSB Loaded ✔";
+      var script = document.createElement('script');script.src = "p/pl_app2usb.js";document.getElementsByTagName('head')[0].appendChild(script);
+      var script = document.createElement('script');script.src = "p/exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+     }
+     if(key==8){//load kerneldump
+      msgs.innerHTML="<div>Loading Kernel Dumper ...</div>";
+      LoadedMSG="Kernel Dumper Loaded ✔";
+      var script = document.createElement('script');script.src = "p/pl_kernelDumper.js";document.getElementsByTagName('head')[0].appendChild(script);
+      var script = document.createElement('script');script.src = "p/exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+     }
+     if(key==9){//load historyblock
+      msgs.innerHTML="<div>Loading History Blocker ...</div>";
+      LoadedMSG="History Blocker Loaded ✔";
+      var script = document.createElement('script');script.src = "p/pl_historyBlocker.js";document.getElementsByTagName('head')[0].appendChild(script);
+      var script = document.createElement('script');script.src = "p/exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+     }
+     if(key==10){//load updatesdisable
+      msgs.innerHTML="<div>Loading Disable Updates ...</div>";
+      LoadedMSG="Disable Updates Loaded ✔";
+      var script = document.createElement('script');script.src = "p/pl_updatesDisable.js";document.getElementsByTagName('head')[0].appendChild(script);
+      var script = document.createElement('script');script.src = "p/exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+     }
+     if(key==11){//load updatesenable
+      msgs.innerHTML="<div>Loading Enable Updates ...</div>";
+      LoadedMSG="Enable Updates Loaded ✔";
+      var script = document.createElement('script');script.src = "p/pl_updatesEnable.js";document.getElementsByTagName('head')[0].appendChild(script);
+      var script = document.createElement('script');script.src = "p/exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+     }
+     if(key==12){//load dbBackup
+      msgs.innerHTML="<div>Loading DB Backup ...</div>";
+      LoadedMSG="DB Backup Loaded ✔";
+      var script = document.createElement('script');script.src = "p/pl_dbBackup.js";document.getElementsByTagName('head')[0].appendChild(script);
+      var script = document.createElement('script');script.src = "p/exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+     }
+     if(key==13){//load dbRestore
+      msgs.innerHTML="<div>Loading DB Restore ...</div>";
+      LoadedMSG="DB Restore Loaded ✔";
+      var script = document.createElement('script');script.src = "p/pl_dbRestore.js";document.getElementsByTagName('head')[0].appendChild(script);
+      var script = document.createElement('script');script.src = "p/exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+     }
+     if(key==14){//load remoteplay
+      msgs.innerHTML="<div>Loading Mira+REMOTPLAY ...</div>";
+      LoadedMSG="Mira+REMOTPLAY Loaded ✔";
+      var script = document.createElement('script');script.src = "p/pl_remoteplay.js";document.getElementsByTagName('head')[0].appendChild(script);
+      var script = document.createElement('script');script.src = "p/exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+     }
+     if(key==15){//load todex
+      msgs.innerHTML="<div>Loading ToDex ...</div>";
+      LoadedMSG="ToDex Loaded ✔";
+      var script = document.createElement('script');script.src = "p/pl_todex.js";document.getElementsByTagName('head')[0].appendChild(script);
+      var script = document.createElement('script');script.src = "p/exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+     }
+     if(key==16){//load webrtw
+      msgs.innerHTML="<div>Loading Webrte ...</div>";
+      LoadedMSG="Webrte Loaded ✔";
+      var script = document.createElement('script');script.src = "p/pl_webrte.js";document.getElementsByTagName('head')[0].appendChild(script);
+      var script = document.createElement('script');script.src = "p/exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+     }
+    },
+    showMain:function(){
+     this.isPayloadShow = true
+     this.isThemesShow = false
+     this.isAboutUsShow = false
+     this.isLoaderShow = true
+    },
+    showTheme:function(){
+     this.isLoaderShow = false
+     this.isAboutUsShow = false
+     this.isThemesShow = true
+     this.isPayloadShow = false
+    },
+    showAboutUs:function(){
+     this.isPayloadShow=false
+     this.isAboutUsShow = true
+     this.isLoaderShow = false
+     this.isThemesShow = false
+    },
+    changeTheme:function(key){
+     this.themes[this.selectedTheme].selected=false
+     localStorage.setItem("theme",(key))
+     this.selectedTheme=localStorage.getItem("theme")
+     this.themes[this.selectedTheme].selected=true
+     document.getElementById("body").style.background="url(img/"+this.themes[localStorage.getItem("theme")].url;
+     document.getElementById("body").style.backgroundRepeat="no-repeat";
+     document.getElementById("body").style.backgroundSize="115%";
+    },
+    hover:function(key){
+     if(key !== undefined){
+      this.isDetailShow = true
+      document.getElementById("detail").innerHTML=this.payloads[key].detail
+     }else{
+      this.isDetailShow = false
+     }
+    },
+   },
+   
+   created(){
+    this.themes[this.selectedTheme].selected=true
+   },
+  })
+ </script>
+ <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+   var elems = document.querySelectorAll('.tooltipped');
+   var instances = M.Tooltip.init(elems);
+  });
+  document.getElementById("body").style.background="url(img/"+app.themes[localStorage.getItem("theme")].url;
+  document.getElementById("body").style.backgroundRepeat="no-repeat";
+  document.getElementById("body").style.backgroundSize="115%";
+ </script>
+ <script type="text/javascript">
+  function showdate() {
+  week= new Array("يكشنبه","دوشنبه","سه شنبه","چهارشنبه","پنج شنبه","جمعه","شنبه");
+  months = new Array("فروردين","ارديبهشت","خرداد","تير","مرداد","شهريور","مهر","آبان","آذر","دی","بهمن","اسفند");
+  a = new Date();
+  d= a.getDay();
+  Hour= a.getHours();
+  Minute= a.getMinutes();
+  Second= a.getSeconds();
+  if(Minute<10){
+  Minute="0"+Minute;
+  }
+  if(Second<10){
+  Second="0"+Second;
+  }
+  if(Hour<10){
+  Hour="0"+Hour;
+  }
+  day= a.getDate();
+  month = a.getMonth()+1;
+  year= a.getYear()-100;
+  year = (year== 0)?2000:year;
+  (year<1000)? (year += 2000):true;
+  year -= ( (month < 3) || ((month == 3) && (day < 21)) )? 622:621;
+  switch (month) {
+  case 1: (day<21)? (month=10, day+=10):(month=11, day-=20); break;
+  case 2: (day<20)? (month=11, day+=11):(month=12, day-=19); break;
+  case 3: (day<21)? (month=12, day+=9):(month=1, day-=20);
+  break;
+  case 4: (day<21)? (month=1, day+=11):(month=2, day-=20);
+  break;
+  case 5:
+  case 6: (day<22)? (month-=3, day+=10):(month-=2, day-=21); break;
+  case 7:
+  case 8:
+  case 9: (day<23)? (month-=3, day+=9):(month-=2, day-=22);
+  break;
+  case 10:(day<23)? (month=7, day+=8):(month=8, day-=22);
+  break;
+  case 11:
+  case 12:(day<22)? (month-=3, day+=9):(month-=2, day-=21);
+  break;
+  default:
+  break;
+  }
+  
+  function gregorian_to_jalali(gy,gm,gd){
+  var g_d_m,jy,jm,jd,gy2,days;
+  g_d_m=[0,31,59,90,120,151,181,212,243,273,304,334];
+  if(gy > 1600){
+  jy=979;
+  gy-=1600;
+  }else{
+  jy=0;
+  gy-=621;
+  }
+  gy2=(gm > 2)?(gy+1):gy;
+  days=(365*gy) +(parseInt((gy2+3)/4)) -(parseInt((gy2+99)/100)) +(parseInt((gy2+399)/400)) -80 +gd +g_d_m[gm-1];
+  jy+=33*(parseInt(days/12053)); 
+  days%=12053;
+  jy+=4*(parseInt(days/1461));
+  days%=1461;
+  if(days > 365){
+  jy+=parseInt((days-1)/365);
+  days=(days-1)%365;
+  }
+  jm=(days < 186)?1+parseInt(days/31):7+parseInt((days-186)/30);
+  jd=1+((days < 186)?(days%31):((days-186)%30));
+  return [jy,jm,jd];
+  }
+  
+  ndt=new Date();
+  g_y=ndt.getFullYear();
+  g_m=ndt.getMonth()+1;
+  g_d=ndt.getDate();
+  shamsi=gregorian_to_jalali(g_y,g_m,g_d);
+  var nday = shamsi[2];
+  
+  document.getElementById("date").innerHTML=(week[d]+" "+nday+" "+months[month-1]+" "+ year);
+  document.getElementById("clock").innerHTML=(Hour+":"+Minute+":"+Second);
+  }
+  setInterval(showdate,500);
+ </script>
+</body>
+</html>
