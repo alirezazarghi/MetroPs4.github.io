@@ -95,7 +95,7 @@ window.applicationCache.onupdateready=function(e){
  <script src="js/materialize.js"></script>
  <script type="text/javascript">
  if(localStorage.getItem("theme")==null){
-  localStorage.setItem("theme","0")
+  localStorage.setItem("theme",0)
  }
  </script>
  <script src="js/vue.js"></script>
@@ -298,16 +298,14 @@ window.applicationCache.onupdateready=function(e){
    
    created(){
     this.themes[this.selectedTheme].selected=true
-    alert(localStorage)
-    alert(localStorage.getItem("theme"))
+
+
    },
   })
  </script>
  <script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function() {
-   var elems = document.querySelectorAll('.tooltipped');
-   var instances = M.Tooltip.init(elems);
-  });
+
+
   document.getElementById("body").style.background="url(img/"+app.themes[localStorage.getItem("theme")].url;
   document.getElementById("body").style.backgroundRepeat="no-repeat";
   document.getElementById("body").style.backgroundSize="115%";
